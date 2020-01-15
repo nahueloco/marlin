@@ -136,7 +136,7 @@ config CPU_FREQ_DEFAULT_GOV_ALUCARDSCHED
 	  Use the 'alucardsched' CPUFreq governor by default. If unsure,
 	  have a look at the help section of that governor. The fallback
 	  governor will be 'performance'.
-
+endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
@@ -260,8 +260,6 @@ config CPU_FREQ_GOV_SCHED
 
 	  If in doubt, say N.
 
-comment "CPU frequency scaling drivers"
-
 config CPU_FREQ_GOV_ALUCARDSCHED
 	bool "'alucardsched' cpufreq policy governor"
 	depends on CPU_FREQ && SMP
@@ -279,6 +277,8 @@ config CPU_FREQ_GOV_ALUCARDSCHED
 
 	  If in doubt, say N.
 
+comment "CPU frequency scaling drivers"
+
 config CPUFREQ_DT
 	tristate "Generic DT based cpufreq driver"
 	depends on HAVE_CLK && OF
@@ -291,6 +291,8 @@ config CPUFREQ_DT
 	  systems which share clock and voltage across all CPUs.
 
 	  If in doubt, say N.
+
+
 
 menu "x86 CPU frequency scaling drivers"
 depends on X86
